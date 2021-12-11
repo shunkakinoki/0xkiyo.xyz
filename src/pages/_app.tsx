@@ -24,6 +24,7 @@ const CustomApp = ({ Component, pageProps }: AppProps): JSX.Element => {
                 137: `https://polygon-mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_ID}`,
               },
               infuraId: process.env.NEXT_PUBLIC_INFURA_ID,
+              network: "matic",
             },
           },
         }}

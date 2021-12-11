@@ -1,12 +1,12 @@
-import { Container } from "@/components/Container";
-
 import { DisconnectButton } from "@/components/DisconnectButton";
+import { Summary } from "@/components/Summary";
 
 export const IndexPage = (): JSX.Element => {
   return (
-    <Container>
+    <>
+      <Summary />
       <DisconnectButton />
-    </Container>
+    </>
   );
 };
 

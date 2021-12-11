@@ -5,6 +5,7 @@ import { Suspense } from "react";
 
 import { Container } from "@/components/Container";
 import { Intro } from "@/components/Intro";
+import { Loading } from "@/components/Loading";
 import { Seo } from "@/components/Seo";
 import "@/styles/index.css";
 
@@ -25,7 +26,7 @@ const CustomApp = ({ Component, pageProps }: AppProps): JSX.Element => {
         fallback={<Intro />}
         loading={null}
       >
-        <Suspense fallback={<div>asdf</div>}>
+        <Suspense fallback={<Loading />}>
           <Component {...pageProps} />
         </Suspense>
       </WalletProvider>

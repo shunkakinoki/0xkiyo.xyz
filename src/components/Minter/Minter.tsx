@@ -6,6 +6,7 @@ import {
   useWriteContract,
   useWaitForTransaction,
   useReadContract,
+  useTokenBalance,
   useTokenMetadata,
 } from "ethereal-react";
 
@@ -44,6 +45,11 @@ export const Minted = ({
 export const Minter = ({ contract }: { contract: Contract }) => {
   const [mint, { loading, data }] = useWriteContract(contract, "mint");
   const tokenId = useTokenId(contract);
+  const balance = useTokenBalance(contract);
+
+  if (balance.toNumber() !== 0) {
+    return <div>Minted already: {JSON.stringify(balance)}</div>;
+  }
 
   if (data) {
     return (

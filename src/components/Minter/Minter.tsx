@@ -28,7 +28,7 @@ export const View = ({
 }) => {
   return (
     <div className="my-3">
-      <h3 className="text-3xl text-center">{name}</h3>
+      <h3 className="text-6xl text-center">{name}</h3>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img className="mt-3 w-[300px] h-[300px]" src={image} alt={name} />
       <a
@@ -103,7 +103,7 @@ export const Minter = ({ contract }: { contract: Contract }) => {
   if (balance.toNumber() !== 0) {
     return (
       <div>
-        <h2 className="text-2xl text-center">Minted already:</h2>
+        <h2 className="text-lg text-center">Minted already:</h2>
         {Array.from({ length: balance.toNumber() }, (_, index) => {
           return <Mint key={index} index={index} contract={contract} />;
         })}

@@ -17,7 +17,7 @@ export const Summary = ({ contract }: { contract: Contract }) => {
   return (
     <div className="py-3 text-white">
       <h1 className="px-3 mx-auto max-w-xl text-5xl text-center">
-        Mint one of the words from blessings from all around the world
+        Happy birthday from...
       </h1>
       <h1 className="px-3 mx-auto mt-3 text-3xl font-medium text-center ">
         {/* eslint-disable-next-line @typescript-eslint/no-unsafe-call */}

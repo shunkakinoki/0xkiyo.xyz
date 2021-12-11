@@ -1,14 +1,14 @@
 {
-  "name": "shunkakinoki.com",
+  "name": "0xkiyo.xyz",
   "version": "1.24.32",
   "description": "",
-  "homepage": "https://shunkakinoki.com",
+  "homepage": "https://0xkiyo.xyz",
   "bugs": {
-    "url": "https://github.com/shunkakinoki/shunkakinoki.com/issues"
+    "url": "https://github.com/shunkakinoki/0xkiyo.xyz/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shunkakinoki/shunkakinoki.com.git"
+    "url": "git+https://github.com/shunkakinoki/0xkiyo.xyz.git"
   },
   "license": "MIT",
   "author": "Shun Kakinoki",
@@ -51,10 +51,11 @@
   "dependencies": {
     "@headlessui/react": "^1.4.2",
     "@heroicons/react": "^1.0.5",
+    "@walletconnect/web3-provider": "^1.6.6",
     "autoprefixer": "^10.4.0",
+    "ethereal-react": "^0.4.0",
     "next": "^12.0.7",
     "next-seo": "^4.28.1",
-    "next-themes": "^0.0.15",
     "postcss": "^8.4.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

@@ -1,0 +1,7 @@
+name: 0xkiyo
+root: ~/ghq/github.com/shunkakinoki/0xkiyo.xyz
+attach: true
+windows:
+  - zsh: neofetch
+  - zsh: neofetch
+  - zsh: neofetch

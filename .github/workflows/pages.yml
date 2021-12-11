@@ -1,0 +1,23 @@
+name: Pages
+on:
+  push:
+    branches:
+      - main
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: |
+          yarn install --frozen-lockfile
+      - run: |
+          yarn run build
+      - run: |
+          yarn run export
+      - uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          cname: 0xkiyo.xyz

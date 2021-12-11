@@ -1,0 +1,18 @@
+{
+  "name": "Koheimez",
+  "image": "https://0xkiyo.xyz/13.jpg",
+  "attributes": [
+    {
+      "trait_type": "Member",
+      "value": "Kohei"
+    },
+    {
+      "trait_type": "Target",
+      "value": "Selena Gomez"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "4"
+    }
+  ]
+}

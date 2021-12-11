@@ -1,0 +1,18 @@
+{
+  "name": "Yamada D. Trump",
+  "image": "https://0xkiyo.xyz/22.jpg",
+  "attributes": [
+    {
+      "trait_type": "Member",
+      "value": "Yamada"
+    },
+    {
+      "trait_type": "Target",
+      "value": "Donald J. Trump"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "7"
+    }
+  ]
+}

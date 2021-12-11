@@ -1,0 +1,18 @@
+{
+  "name": "Shugo Lawrence",
+  "image": "https://0xkiyo.xyz/8.jpg",
+  "attributes": [
+    {
+      "trait_type": "Member",
+      "value": "Shugo"
+    },
+    {
+      "trait_type": "Target",
+      "value": "Jennifer Lawrence"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "4"
+    }
+  ]
+}

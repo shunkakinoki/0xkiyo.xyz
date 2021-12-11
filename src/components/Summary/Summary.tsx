@@ -1,11 +1,13 @@
-import { useBlock, useBalance, useReadContract } from "ethereal-react";
+import { useBlock, useBalance } from "ethereal-react";
 import type { Contract } from "ethereal-react";
 import { useEffect } from "react";
+
+import { useTokenId } from "@/hooks/useTokenId";
 
 export const Summary = ({ contract }: { contract: Contract }) => {
   const [block] = useBlock();
   const balance = useBalance();
-  const tokenId = useReadContract(contract, "totalSupply");
+  const tokenId = useTokenId(contract);
 
   useEffect(() => {
     console.log(`balance: ${balance}`);

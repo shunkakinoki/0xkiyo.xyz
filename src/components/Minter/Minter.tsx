@@ -6,8 +6,12 @@ import {
   useWriteContract,
   useWaitForTransaction,
   useReadContract,
+  useTokenMetadata,
 } from "ethereal-react";
+
 import React, { Suspense } from "react";
+
+import { useTokenId } from "@/hooks/useTokenId";
 
 export const Minted = ({
   transaction,
@@ -20,29 +24,33 @@ export const Minted = ({
 }) => {
   const confirmation = useWaitForTransaction(transaction);
   const tokenURI = useReadContract(contract, "tokenURI", tokenId);
+  const metadata = useTokenMetadata(contract, tokenId);
   return (
-    <div className="text-2xl">
+    <div className="flex justify-center text-2xl">
       Minted!
       {confirmation.status}
+      {JSON.stringify(tokenURI)}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={JSON.parse(tokenURI.split(",")[1]).image}
-        alt={JSON.parse(tokenURI.split(",")[1]).name}
+        className="w-[300px] h-[300px]"
+        src={metadata.image}
+        alt={metadata.name}
       />
+      {metadata.name}
     </div>
   );
 };
 
 export const Minter = ({ contract }: { contract: Contract }) => {
   const [mint, { loading, data }] = useWriteContract(contract, "mint");
-  const tokenId = useReadContract(contract, "totalSupply");
+  const tokenId = useTokenId(contract);
 
   if (data) {
     return (
       <Suspense fallback={<div className="my-2 text-2xl">Minting...</div>}>
         <Minted
           contract={contract}
-          tokenId={Number(tokenId.toString()) + 1}
+          tokenId={Number(tokenId)}
           transaction={data}
         />
       </Suspense>
@@ -57,7 +65,7 @@ export const Minter = ({ contract }: { contract: Contract }) => {
         return mint();
       }}
     >
-      Mint NFT #{tokenId.toString()}
+      Mint NFT #{Number(tokenId.toString()) + 1}
     </button>
   );
 };

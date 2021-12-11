@@ -1,0 +1,18 @@
+{
+  "name": "Mr.Yamada",
+  "image": "https://0xkiyo.xyz/10.jpg",
+  "attributes": [
+    {
+      "trait_type": "Member",
+      "value": "Yamada"
+    },
+    {
+      "trait_type": "Target",
+      "value": "Mr.Beast"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "10"
+    }
+  ]
+}

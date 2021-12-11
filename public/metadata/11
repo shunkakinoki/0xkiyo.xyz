@@ -1,0 +1,18 @@
+{
+  "name": "Kobama",
+  "image": "https://0xkiyo.xyz/11.jpg",
+  "attributes": [
+    {
+      "trait_type": "Member",
+      "value": "Kohei"
+    },
+    {
+      "trait_type": "Target",
+      "value": "Obama"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "4"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Kazukinem",
+  "image": "https://0xkiyo.xyz/15.jpg",
+  "attributes": [
+    {
+      "trait_type": "Member",
+      "value": "Kazuki"
+    },
+    {
+      "trait_type": "Target",
+      "value": "Eminem"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "6"
+    }
+  ]
+}

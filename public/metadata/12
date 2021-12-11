@@ -1,0 +1,18 @@
+{
+  "name": "Ozpez",
+  "image": "https://0xkiyo.xyz/12.jpg",
+  "attributes": [
+    {
+      "trait_type": "Member",
+      "value": "Oz"
+    },
+    {
+      "trait_type": "Target",
+      "value": "Jennifer Lopez"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "2"
+    }
+  ]
+}

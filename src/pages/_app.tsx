@@ -25,7 +25,7 @@ const CustomApp = ({ Component, pageProps }: AppProps): JSX.Element => {
           },
         }}
         fallback={<Intro />}
-        loading={null}
+        loading={<Loading />}
       >
         <Suspense fallback={<Loading />}>
           <RequireNetwork chainId={137} fallback={<SwitchNetwork />}>

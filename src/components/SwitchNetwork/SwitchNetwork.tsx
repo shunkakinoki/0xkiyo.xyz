@@ -3,7 +3,7 @@ import { useSwitchNetwork } from "ethereal-react";
 import { Container } from "@/components/Container";
 
 export const SwitchNetwork = () => {
-  const [switchNetwork, { loading }] = useSwitchNetwork({ chainId: 80001 });
+  const [switchNetwork, { loading }] = useSwitchNetwork({ chainId: 137 });
 
   return (
     <Container>

@@ -1,5 +1,5 @@
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import { WalletProvider } from "ethereal-react";
+import { RequireNetwork, WalletProvider } from "ethereal-react";
 import type { AppProps } from "next/app";
 import { Suspense } from "react";
 
@@ -7,6 +7,7 @@ import { Container } from "@/components/Container";
 import { Intro } from "@/components/Intro";
 import { Loading } from "@/components/Loading";
 import { Seo } from "@/components/Seo";
+import { SwitchNetwork } from "@/components/SwitchNetwork";
 import "@/styles/index.css";
 
 const CustomApp = ({ Component, pageProps }: AppProps): JSX.Element => {
@@ -27,7 +28,10 @@ const CustomApp = ({ Component, pageProps }: AppProps): JSX.Element => {
         loading={null}
       >
         <Suspense fallback={<Loading />}>
-          <Component {...pageProps} />
+          <RequireNetwork chainId={137} fallback={<SwitchNetwork />}>
+            <Component {...pageProps} />
+          </RequireNetwork>
+          s
         </Suspense>
       </WalletProvider>
     </Container>

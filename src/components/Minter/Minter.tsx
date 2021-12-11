@@ -11,9 +11,37 @@ import {
   useUserAddress,
 } from "ethereal-react";
 
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 
 import { useTokenId } from "@/hooks/useTokenId";
+
+export const View = ({
+  contract,
+  name,
+  image,
+  tokenId,
+}: {
+  contract: Contract;
+  name: string;
+  image: string;
+  tokenId: number;
+}) => {
+  return (
+    <div className="my-3">
+      <h3 className="text-3xl text-center">{name}</h3>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img className="mt-3 w-[300px] h-[300px]" src={image} alt={name} />
+      <a
+        href={`https://opensea.io/assets/matic/${contract.address}/${tokenId}`}
+        className="mt-6 text-2xl underline hover:bg-gray-600 hover:cursor-pointer"
+        target="_blank"
+        rel="noreferrer"
+      >
+        View on opensea
+      </a>
+    </div>
+  );
+};
 
 export const Mint = ({
   contract,
@@ -23,24 +51,21 @@ export const Mint = ({
   index: number;
 }) => {
   const address = useUserAddress();
-  const tokenID = useReadContract(
+  const tokenId = useReadContract(
     contract,
     "tokenOfOwnerByIndex",
     address,
     index,
   );
-  const metadata = useTokenMetadata(contract, tokenID);
+  const metadata = useTokenMetadata(contract, tokenId);
 
   return (
-    <div className="mt-3">
-      <h3 className="text-3xl text-center">{metadata.name}</h3>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        className="mt-3 w-[300px] h-[300px]"
-        src={metadata.image}
-        alt={metadata.name}
-      />
-    </div>
+    <View
+      contract={contract}
+      name={metadata.name}
+      image={metadata.image}
+      tokenId={tokenId}
+    />
   );
 };
 
@@ -56,17 +81,17 @@ export const Minted = ({
   const confirmation = useWaitForTransaction(transaction);
   const metadata = useTokenMetadata(contract, tokenId);
 
+  useEffect(() => {
+    console.log(confirmation);
+  });
+
   return (
-    <div>
-      Minted!{confirmation.status}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        className="w-[300px] h-[300px]"
-        src={metadata.image}
-        alt={metadata.name}
-      />
-      {metadata.name}
-    </div>
+    <View
+      contract={contract}
+      name={metadata.name}
+      image={metadata.image}
+      tokenId={tokenId}
+    />
   );
 };
 

@@ -15,8 +15,6 @@
   "scripts": {
     "analyze": "cross-env NEXT_ANALYZE=true next build",
     "build": "next build",
-    "postbuild": "next-sitemap",
-    "build:storybook": "build-storybook -o public",
     "cmd:eslint": "scripty",
     "cmd:prettier": "scripty",
     "depcheck": "scripty",
@@ -44,11 +42,8 @@
     "release": "scripty",
     "release:multi-semantic-release": "scripty",
     "release:semantic-release": "scripty",
-    "storybook": "start-storybook -p 6006",
     "stylelint:check": "stylelint 'src/**/*.css'",
-    "stylelint:fix": "stylelint 'src/**/*.css' --fix",
-    "tsc": "tsc",
-    "tsc:watch": "tsc -w"
+    "stylelint:fix": "stylelint 'src/**/*.css' --fix"
   },
   "npmpackagejsonlint": {
     "extends": "@shunkakinoki/npm-package-json-lint-config"

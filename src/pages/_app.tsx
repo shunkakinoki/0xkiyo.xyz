@@ -31,7 +31,6 @@ const CustomApp = ({ Component, pageProps }: AppProps): JSX.Element => {
           <RequireNetwork chainId={137} fallback={<SwitchNetwork />}>
             <Component {...pageProps} />
           </RequireNetwork>
-          s
         </Suspense>
       </WalletProvider>
     </Container>

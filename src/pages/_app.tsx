@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 
-import "tailwindcss/tailwind.css";
+import "@/styles/index.css";
 
 const CustomApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (

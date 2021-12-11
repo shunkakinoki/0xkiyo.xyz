@@ -26,11 +26,6 @@ const CustomApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       <Suspense fallback={null}>
         <Seo />
         <RequireNetwork chainId={80001} fallback={<SwitchNetwork />}>
-          {/* <Script
-        defer
-        src="https://static.cloudflareinsights.com/beacon.min.js"
-        data-cf-beacon={`{"token": "${process.env.NEXT_PUBLIC_CLOUDFLARE_API_KEY}"}`}
-      /> */}
           <Component {...pageProps} />
         </RequireNetwork>
       </Suspense>
